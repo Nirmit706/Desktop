@@ -1,0 +1,104 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.currencyconverter"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+ext {
+    supportLibraryVersion = '1.0.0'
+    appcompatVersion = '1.1.0'
+    retrofitVersion = '2.5.0'
+    glideVersion = '4.8.0'
+}
+
+dependencies {
+    implementation project(":data")
+    implementation project(":domain")
+    implementation project(":usecases")
+
+    implementation kotlinLibs.values()
+    //Android Libs
+    implementation androidLibs.values()
+    implementation androidLibs.values()
+    implementation androidLibs.values()
+    implementation androidLibs.values()
+
+    //Android Test
+    androidTestImplementation androidTestLibs.values()
+    androidTestImplementation testLibs.values()
+    androidTestImplementation androidTestLibs.values()
+    androidTestImplementation androidTestLibs.values()
+    androidTestImplementation androidTestLibs.values()
+    testImplementation testLibs.values()
+    testImplementation testLibs.values()
+    testImplementation testLibs.values()
+    testImplementation androidxTestLibs.values()
+    testImplementation testLibs.values()
+    testImplementation testLibs.values()
+
+    //Retrofit
+    implementation libs.values()
+
+    //Paser JSON
+    implementation libs.values()
+    implementation libs.values()
+
+    //Logging HTTP
+    implementation libs.values()
+
+    //Livedata
+    implementation androidLibs.values()
+    implementation androidLibs.values()
+    implementation androidLibs.values()
+
+    //Navigation component
+    implementation androidLibs.values()
+    implementation androidLibs.values()
+
+    //Calligraphy
+    implementation libs.values()
+
+    implementation libs.values()
+
+    //Glide
+    implementation androidLibs.values()
+
+    //Coroutines
+    implementation kotlinLibs.values()
+    implementation libs.values()
+
+    //Room
+    implementation androidLibs.values()
+    kapt androidKaptLibs.values()
+
+    //Koin
+    implementation libs.values()
+
+    //MPAndroidChart
+    implementation androidLibs.values()
+}
+repositories {
+    mavenCentral()
+}

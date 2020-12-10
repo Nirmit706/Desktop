@@ -1,0 +1,33 @@
+Ans:1
+
+Ans:2
+
+fun areAnagram(str1: String, str2: String): Boolean {
+        val n1: Int = str1.length
+        val n2: Int = str2.length
+
+        if (n1 != n2) return false
+
+        sort(str1.begin(), str1.end())
+        sort(str2.begin(), str2.end())
+
+        for (i in 0 until n1) if (str1.get(i) !== str2.get(i)) return false
+        return true
+    }
+	
+Ans:3
+
+ fun feboSerise() {
+            val maxNumber = 10
+            var previousNumber = 0
+            var nextNumber = 1
+            print("Fibonacci Series of $maxNumber numbers:")
+            var i = 1
+            while (i <= maxNumber) {
+                print("$previousNumber ")
+                val sum = previousNumber + nextNumber
+                previousNumber = nextNumber
+                nextNumber = sum
+                i++
+            }
+        }
